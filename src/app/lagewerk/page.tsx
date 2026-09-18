@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { ContactCTA } from "@/components/sections/ContactCTA";
 import { LagewerkOverview } from "@/components/sections/LagewerkOverview";
-import { Badge } from "@/components/ui/Badge";
-import { PageHero } from "@/components/ui/PageHero";
+import { LagewerkCTA } from "@/components/sections/lagewerk/LagewerkCTA";
+import { LagewerkHero } from "@/components/sections/lagewerk/LagewerkHero";
+import "./lagewerk.css";
 
 export const metadata: Metadata = {
   title: "Lagewerk - Digitale Führungsunterstützung",
@@ -11,20 +11,10 @@ export const metadata: Metadata = {
 
 export default function LagewerkPage() {
   return (
-    <>
-      <PageHero
-        eyebrow="A product by KAERYON"
-        title="LAGEWERK"
-        description="Digitale Führungsunterstützung für Einsatzorganisationen. Eine Plattform für Lageführung, Einsatzkoordination und operative Führungsunterstützung."
-        aside={
-          <>
-            <Badge>In Development</Badge>
-            <strong>Operational Command Software</strong>
-          </>
-        }
-      />
+    <div className="lagewerk-page">
+      <LagewerkHero />
       <LagewerkOverview />
-      <ContactCTA />
-    </>
+      <LagewerkCTA />
+    </div>
   );
 }

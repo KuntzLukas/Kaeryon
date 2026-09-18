@@ -1,0 +1,360 @@
+/* LAGEWERK product page */
+.lagewerk-page {
+  --lagewerk-grid: rgba(103, 232, 249, 0.065);
+  position: relative;
+  overflow: clip;
+  background:
+    radial-gradient(circle at 88% 12%, rgba(34, 211, 238, 0.035), transparent 24%),
+    linear-gradient(180deg, rgba(3, 7, 13, 0.12), rgba(3, 7, 13, 0.54));
+}
+
+.lagewerk-hero {
+  position: relative;
+  min-height: 830px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.09);
+  isolation: isolate;
+}
+.lagewerk-hero::after {
+  position: absolute;
+  z-index: 0;
+  inset: auto -7% 0;
+  height: 31%;
+  background: linear-gradient(180deg, rgba(11, 27, 44, 0.58), rgba(3, 7, 13, 0.98));
+  clip-path: polygon(0 73%, 9% 46%, 18% 68%, 29% 30%, 40% 72%, 54% 41%, 65% 75%, 79% 35%, 90% 65%, 100% 44%, 100% 100%, 0 100%);
+  content: "";
+  opacity: 0.72;
+}
+.lagewerk-hero__atmosphere { z-index: -2; opacity: 0.86; }
+.lagewerk-hero__atmosphere .mountain-layer { opacity: 0.3; }
+.lagewerk-hero__cartography {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  opacity: 0.5;
+  background-image:
+    linear-gradient(24deg, transparent 49.9%, rgba(103, 232, 249, 0.045) 50%, transparent 50.1%),
+    radial-gradient(circle at 73% 43%, transparent 0 8rem, rgba(103, 232, 249, 0.055) 8.05rem, transparent 8.1rem),
+    radial-gradient(circle at 73% 43%, transparent 0 13rem, rgba(103, 232, 249, 0.03) 13.05rem, transparent 13.1rem);
+  mask-image: linear-gradient(90deg, transparent 12%, black 55%, black 90%, transparent);
+}
+.lagewerk-hero__glow { z-index: 0; right: 12%; top: 47%; width: min(46rem, 78vw); }
+.lagewerk-hero__inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  min-height: 830px;
+  align-items: center;
+  padding-top: 8.5rem;
+  padding-bottom: 6.5rem;
+}
+.lagewerk-hero__layout {
+  display: grid;
+  width: 100%;
+  grid-template-columns: minmax(0, 1.03fr) minmax(440px, 0.97fr);
+  gap: clamp(3rem, 6vw, 7rem);
+  align-items: center;
+}
+.lagewerk-hero__copy { min-width: 0; }
+.lagewerk-identity { display: flex; align-items: flex-end; gap: 1.4rem; margin-bottom: 2.2rem; }
+.lagewerk-identity > div { min-width: 0; }
+.lagewerk-identity h1 {
+  margin: 0;
+  font-size: clamp(4.2rem, 7vw, 7.25rem);
+  font-weight: 570;
+  letter-spacing: -0.072em;
+  line-height: 0.82;
+}
+.lagewerk-identity > div > p {
+  margin: 1rem 0 0 0.25rem;
+  color: #718297;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+.lagewerk-identity .badge { margin-bottom: 0.25rem; white-space: nowrap; }
+.lagewerk-hero__statement {
+  max-width: 730px;
+  margin: 0;
+  font-size: clamp(2.15rem, 4vw, 4.4rem);
+  font-weight: 490;
+  letter-spacing: -0.052em;
+  line-height: 1.03;
+  text-wrap: balance;
+}
+.lagewerk-hero__statement span { display: block; color: #8e9cae; }
+.lagewerk-hero__description {
+  max-width: 620px;
+  margin: 2rem 0 0;
+  color: #a8b5c4;
+  font-size: clamp(1rem, 1.35vw, 1.14rem);
+  line-height: 1.75;
+}
+.lagewerk-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.75rem;
+  margin-top: 2.5rem;
+  color: #708196;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.61rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+.lagewerk-hero__meta span { display: inline-flex; align-items: center; gap: 0.65rem; }
+.lagewerk-hero__meta span::before {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.55);
+  content: "";
+}
+.lagewerk-hero__visual {
+  min-width: 0;
+  transform: perspective(1200px) rotateY(-2deg);
+  transform-origin: right center;
+}
+
+.lagewerk-map {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 1.35rem;
+  background: linear-gradient(145deg, rgba(9, 20, 33, 0.86), rgba(3, 8, 14, 0.9));
+  box-shadow: 0 35px 100px rgba(0, 0, 0, 0.32), 0 0 70px rgba(34, 211, 238, 0.035);
+  backdrop-filter: blur(20px);
+}
+.lagewerk-map::before,
+.lagewerk-map::after {
+  position: absolute;
+  z-index: 3;
+  width: 15px;
+  height: 15px;
+  pointer-events: none;
+  content: "";
+}
+.lagewerk-map::before { left: -1px; top: -1px; border-top: 1px solid rgba(103, 232, 249, 0.74); border-left: 1px solid rgba(103, 232, 249, 0.74); }
+.lagewerk-map::after { right: -1px; bottom: -1px; border-right: 1px solid rgba(103, 232, 249, 0.5); border-bottom: 1px solid rgba(103, 232, 249, 0.5); }
+.lagewerk-map__header,
+.lagewerk-map__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #74869a;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.lagewerk-map__header { min-height: 48px; border-bottom: 1px solid rgba(148, 163, 184, 0.1); padding: 0 1.1rem; }
+.lagewerk-map__status { display: inline-flex; align-items: center; gap: 0.55rem; color: #8ca0b4; }
+.lagewerk-map__status i { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px rgba(34, 211, 238, 0.85); }
+.lagewerk-map__stage {
+  position: relative;
+  min-height: 480px;
+  overflow: hidden;
+  background-image:
+    linear-gradient(var(--lagewerk-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--lagewerk-grid) 1px, transparent 1px),
+    radial-gradient(circle at 51% 54%, rgba(34, 211, 238, 0.055), transparent 28%);
+  background-size: 42px 42px, 42px 42px, auto;
+}
+.lagewerk-map__stage::before { position: absolute; inset: 14% 11%; border: 1px dashed rgba(103, 232, 249, 0.13); content: ""; transform: rotate(-5deg); }
+.lagewerk-map__stage::after {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, transparent 49.9%, rgba(103, 232, 249, 0.1) 50%, transparent 50.1%),
+    linear-gradient(transparent 49.9%, rgba(103, 232, 249, 0.1) 50%, transparent 50.1%);
+  content: "";
+  mask-image: radial-gradient(circle at center, black, transparent 65%);
+}
+.lagewerk-map--compact .lagewerk-map__stage { min-height: 450px; }
+.lagewerk-map__connections { position: absolute; z-index: 1; inset: 4% 3%; width: 94%; height: 92%; overflow: visible; }
+.lagewerk-map__connections path,
+.lagewerk-map__connections circle { fill: none; stroke: rgba(103, 232, 249, 0.2); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.lagewerk-map__connections .lagewerk-map__route { stroke: rgba(103, 232, 249, 0.48); stroke-dasharray: 5 8; stroke-width: 1.2; }
+.lagewerk-map__connections circle { stroke: rgba(103, 232, 249, 0.1); stroke-dasharray: 2 7; }
+.lagewerk-map__sector {
+  position: absolute;
+  z-index: 0;
+  left: 18%;
+  top: 18%;
+  width: 46%;
+  height: 50%;
+  border: 1px solid rgba(56, 189, 248, 0.18);
+  background: rgba(34, 211, 238, 0.035);
+  clip-path: polygon(10% 18%, 72% 0, 100% 61%, 54% 100%, 0 70%);
+  transform: rotate(-7deg);
+}
+.lagewerk-map__sector span { position: absolute; left: 34%; top: 40%; color: rgba(103, 232, 249, 0.32); font-family: var(--font-geist-mono), monospace; font-size: 0.65rem; letter-spacing: 0.2em; }
+.lagewerk-map__marker {
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  border: 1px solid rgba(103, 232, 249, 0.3);
+  border-radius: 0.55rem;
+  background: rgba(5, 15, 25, 0.94);
+  padding: 0.58rem 0.68rem;
+  color: #96dfec;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.28), 0 0 22px rgba(34, 211, 238, 0.055);
+}
+.lagewerk-map__marker span { color: #a7b7c7; font-family: var(--font-geist-mono), monospace; font-size: 0.55rem; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; }
+.lagewerk-map__marker--command { left: 45%; top: 47%; }
+.lagewerk-map__marker--team { left: 13%; bottom: 18%; }
+.lagewerk-map__marker--message { right: 9%; top: 19%; }
+.lagewerk-map__marker--point { right: 9%; bottom: 17%; }
+.lagewerk-map__coordinate,
+.lagewerk-map__bearing,
+.lagewerk-map__scale { position: absolute; z-index: 4; color: rgba(148, 163, 184, 0.52); font-family: var(--font-geist-mono), monospace; font-size: 0.5rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.lagewerk-map__coordinate--top { left: 1rem; top: 0.8rem; }
+.lagewerk-map__coordinate--side { right: 0.75rem; top: 42%; writing-mode: vertical-rl; }
+.lagewerk-map__bearing { right: 1rem; top: 0.8rem; color: rgba(103, 232, 249, 0.5); }
+.lagewerk-map__scale { left: 1rem; bottom: 0.8rem; border-top: 1px solid rgba(148, 163, 184, 0.35); padding-top: 0.35rem; }
+.lagewerk-map__footer { min-height: 60px; border-top: 1px solid rgba(148, 163, 184, 0.1); }
+.lagewerk-map__footer span { flex: 1; padding: 0 1rem; }
+.lagewerk-map__footer span + span { border-left: 1px solid rgba(148, 163, 184, 0.1); }
+.lagewerk-map__footer b { margin-right: 0.3rem; color: #d7e1ea; font-size: 0.86rem; font-weight: 500; }
+
+.lagewerk-features__intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: end;
+  margin: 0 0 2rem calc(36% + 1rem);
+  border-top: 1px solid rgba(148, 163, 184, 0.11);
+  padding-top: 2rem;
+}
+.lagewerk-features__intro h3 { margin: 1.15rem 0 0; font-size: 1.45rem; font-weight: 540; }
+.lagewerk-features__intro > p { max-width: 560px; margin: 0; color: #8f9fb1; font-size: 0.9rem; line-height: 1.7; }
+.lagewerk-feature-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+.lagewerk-feature-grid > div { min-width: 0; height: 100%; }
+.lagewerk-feature-card {
+  position: relative;
+  min-height: 285px;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.15rem;
+  background: linear-gradient(145deg, rgba(7, 17, 29, 0.72), rgba(7, 17, 29, 0.46));
+  padding: 1.45rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  backdrop-filter: blur(16px);
+}
+.lagewerk-feature-card:hover { border-color: rgba(103, 232, 249, 0.28); box-shadow: 0 18px 48px rgba(0, 0, 0, 0.18), 0 0 28px rgba(34, 211, 238, 0.045); transform: translateY(-3px); }
+.lagewerk-feature-card::after { position: absolute; right: -30%; bottom: -42%; width: 75%; height: 75%; border-radius: 50%; background: rgba(34, 211, 238, 0.04); filter: blur(28px); content: ""; }
+.lagewerk-feature-card__topline { display: flex; align-items: center; justify-content: space-between; color: #648096; }
+.lagewerk-feature-card__topline span { font-family: var(--font-geist-mono), monospace; font-size: 0.58rem; letter-spacing: 0.13em; }
+.lagewerk-feature-card__topline svg { color: #7fd9e8; }
+.lagewerk-feature-card h3 { margin: 5rem 0 0.85rem; font-size: 1.15rem; font-weight: 560; letter-spacing: -0.02em; }
+.lagewerk-feature-card p { margin: 0; color: #91a0b1; font-size: 0.88rem; line-height: 1.65; }
+.lagewerk-feature-card > i { position: absolute; left: 1.45rem; bottom: 1.45rem; width: 2.2rem; height: 1px; background: linear-gradient(90deg, var(--accent), transparent); }
+
+.lagewerk-workflow { background: radial-gradient(circle at 72% 50%, rgba(34, 211, 238, 0.035), transparent 28%); }
+.lagewerk-workflow__track { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); margin: 0; padding: 0; list-style: none; }
+.lagewerk-workflow__track::before { position: absolute; left: 10%; right: 10%; top: 1.42rem; height: 1px; background: linear-gradient(90deg, rgba(103, 232, 249, 0.12), rgba(103, 232, 249, 0.55), rgba(103, 232, 249, 0.12)); content: ""; }
+.lagewerk-workflow__track li { position: relative; min-width: 0; padding: 0 1rem; text-align: center; }
+.lagewerk-workflow__track li > span { position: relative; z-index: 1; display: grid; width: 2.85rem; height: 2.85rem; place-items: center; margin: 0 auto 1.2rem; border: 1px solid rgba(103, 232, 249, 0.32); border-radius: 50%; background: #07111d; color: #a2e6f1; box-shadow: 0 0 24px rgba(34, 211, 238, 0.08); font-family: var(--font-geist-mono), monospace; font-size: 0.6rem; }
+.lagewerk-workflow__track strong { font-size: 0.95rem; font-weight: 560; }
+.lagewerk-workflow__track li > i { position: absolute; right: -0.2rem; top: 1.25rem; width: 0.4rem; height: 0.4rem; border-top: 1px solid rgba(103, 232, 249, 0.5); border-right: 1px solid rgba(103, 232, 249, 0.5); transform: rotate(45deg); }
+
+.lagewerk-why__grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(3rem, 8vw, 8rem); }
+.lagewerk-why .section-label { margin-top: 4.5rem; }
+.lagewerk-why h2,
+.lagewerk-kaeryon h2,
+.lagewerk-cta h2 { margin: 0; font-size: clamp(2.8rem, 5.2vw, 5.6rem); font-weight: 500; letter-spacing: -0.055em; line-height: 0.98; text-wrap: balance; }
+.lagewerk-why__content { border-top: 1px solid rgba(148, 163, 184, 0.13); padding-top: 1.8rem; }
+.lagewerk-why__content > p { max-width: 660px; margin: 0 0 1.2rem; color: #a2b0c0; font-size: 1rem; line-height: 1.75; }
+.lagewerk-why__content > p:first-child { color: #d1d9e2; font-size: 1.15rem; }
+.lagewerk-why__content dl { display: grid; grid-template-columns: 1fr 1fr; margin: 3rem 0 0; border-top: 1px solid rgba(148, 163, 184, 0.1); }
+.lagewerk-why__content dl div { display: grid; grid-template-columns: 2.2rem 1fr; gap: 0.5rem; border-bottom: 1px solid rgba(148, 163, 184, 0.1); padding: 1rem 0; }
+.lagewerk-why__content dl div:nth-child(even) { border-left: 1px solid rgba(148, 163, 184, 0.1); padding-left: 1.2rem; }
+.lagewerk-why__content dt { color: #5f7489; font-family: var(--font-geist-mono), monospace; font-size: 0.59rem; }
+.lagewerk-why__content dd { margin: 0; color: #aab7c5; font-size: 0.78rem; }
+.lagewerk-why__visual { width: min(76%, 920px); margin: clamp(4rem, 8vw, 7rem) 0 0 auto; }
+.lagewerk-why__visual .lagewerk-map__stage { min-height: 420px; }
+
+.lagewerk-kaeryon { background: linear-gradient(180deg, transparent, rgba(7, 17, 29, 0.28), transparent); }
+.lagewerk-kaeryon__panel { display: grid; grid-template-columns: minmax(210px, 0.35fr) 1fr; overflow: hidden; border: 1px solid rgba(148, 163, 184, 0.14); border-radius: 1.5rem; background: linear-gradient(145deg, rgba(10, 20, 32, 0.68), rgba(3, 7, 13, 0.62)); box-shadow: 0 30px 90px rgba(0, 0, 0, 0.2); backdrop-filter: blur(18px); }
+.lagewerk-kaeryon__mark { position: relative; display: flex; min-height: 430px; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; overflow: hidden; border-right: 1px solid rgba(148, 163, 184, 0.1); background: linear-gradient(rgba(103, 232, 249, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(103, 232, 249, 0.035) 1px, transparent 1px), rgba(3, 7, 13, 0.26); background-size: 48px 48px; }
+.lagewerk-kaeryon__mark::after { position: absolute; width: 240px; height: 240px; border: 1px solid rgba(103, 232, 249, 0.09); border-radius: 50%; content: ""; box-shadow: 0 0 80px rgba(34, 211, 238, 0.06); }
+.lagewerk-kaeryon__mark img { position: relative; z-index: 1; width: 72px; height: 72px; }
+.lagewerk-kaeryon__mark span { position: relative; z-index: 1; color: #65788c; font-family: var(--font-geist-mono), monospace; font-size: 0.58rem; letter-spacing: 0.16em; text-transform: uppercase; }
+.lagewerk-kaeryon__copy { padding: clamp(2.5rem, 6vw, 6rem); }
+.lagewerk-kaeryon__copy h2 { margin-bottom: 2rem; }
+.lagewerk-kaeryon__copy > p:not(.section-label) { max-width: 700px; margin: 0; color: #a6b3c2; font-size: 1.05rem; line-height: 1.75; }
+.lagewerk-kaeryon__copy blockquote { max-width: 760px; margin: 2rem 0 0; border-left: 1px solid var(--accent); padding: 0.25rem 0 0.25rem 1.5rem; color: #d0d9e2; font-size: 1.08rem; line-height: 1.7; }
+
+.lagewerk-cta { min-height: 620px; display: flex; align-items: center; background: radial-gradient(circle at 75% 52%, rgba(34, 211, 238, 0.075), transparent 26%); }
+.lagewerk-cta__terrain { position: absolute; z-index: 0; inset: auto -4% 0; height: 48%; background: linear-gradient(180deg, rgba(11, 27, 44, 0.64), rgba(3, 7, 13, 0.98)); clip-path: polygon(0 78%, 12% 42%, 25% 72%, 37% 26%, 51% 73%, 64% 41%, 77% 70%, 90% 32%, 100% 63%, 100% 100%, 0 100%); opacity: 0.68; }
+.lagewerk-cta__glow { z-index: 1; right: 8%; bottom: 13%; }
+.lagewerk-cta__panel { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(110px, 0.26fr) 1fr auto; gap: 2.5rem; align-items: end; border-top: 1px solid rgba(148, 163, 184, 0.13); border-bottom: 1px solid rgba(148, 163, 184, 0.13); padding: 3rem 0; }
+.lagewerk-cta__panel > div > p:not(.section-label) { max-width: 640px; margin: 1.5rem 0 0; color: #a4b2c1; line-height: 1.75; }
+
+@media (max-width: 1180px) {
+  .lagewerk-hero__inner,
+  .lagewerk-hero { min-height: auto; }
+  .lagewerk-hero__inner { padding-top: 8rem; padding-bottom: 7rem; }
+  .lagewerk-hero__layout { grid-template-columns: 1fr; gap: 4.5rem; }
+  .lagewerk-hero__copy { max-width: 860px; }
+  .lagewerk-hero__visual { width: min(780px, 100%); transform: none; }
+  .lagewerk-feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 900px) {
+  .lagewerk-features__intro { margin-left: 0; }
+  .lagewerk-why__grid { grid-template-columns: 1fr; gap: 3.5rem; }
+  .lagewerk-why .section-label { margin-top: 3rem; }
+  .lagewerk-why__visual { width: 100%; }
+  .lagewerk-kaeryon__panel { grid-template-columns: 1fr; }
+  .lagewerk-kaeryon__mark { min-height: 240px; border-right: 0; border-bottom: 1px solid rgba(148, 163, 184, 0.1); }
+  .lagewerk-cta__panel { grid-template-columns: 1fr; align-items: start; }
+}
+
+@media (max-width: 640px) {
+  .lagewerk-hero__inner { padding-top: 6.75rem; padding-bottom: 4.5rem; }
+  .lagewerk-hero__layout { gap: 3rem; }
+  .lagewerk-identity { display: block; margin-bottom: 1.8rem; }
+  .lagewerk-identity h1 { font-size: clamp(3.1rem, 14vw, 4rem); line-height: 0.9; }
+  .lagewerk-identity .badge { margin-top: 1.2rem; }
+  .lagewerk-hero__statement {
+    font-size: clamp(1.9rem, 8vw, 2.55rem);
+    overflow-wrap: anywhere;
+    hyphens: auto;
+  }
+  .lagewerk-hero__description { overflow-wrap: anywhere; }
+  .lagewerk-hero .eyebrow { gap: 0.55rem; font-size: 0.55rem; letter-spacing: 0.12em; }
+  .lagewerk-hero__visual { width: 100%; }
+  .lagewerk-hero__meta { display: grid; gap: 0.7rem; }
+  .lagewerk-map { border-radius: 1rem; }
+  .lagewerk-map__stage,
+  .lagewerk-map--compact .lagewerk-map__stage,
+  .lagewerk-why__visual .lagewerk-map__stage { min-height: 335px; background-size: 34px 34px, 34px 34px, auto; }
+  .lagewerk-map__marker { padding: 0.48rem; }
+  .lagewerk-map__marker span { display: none; }
+  .lagewerk-map__marker--team { left: 14%; bottom: 16%; }
+  .lagewerk-map__marker--message { right: 10%; top: 18%; }
+  .lagewerk-map__marker--point { display: none; }
+  .lagewerk-map__footer span { padding: 0 0.55rem; text-align: center; }
+  .lagewerk-map__footer b { display: block; margin: 0 0 0.25rem; }
+  .lagewerk-features__intro { grid-template-columns: 1fr; align-items: start; }
+  .lagewerk-feature-grid { grid-template-columns: 1fr; }
+  .lagewerk-feature-card { min-height: 260px; }
+  .lagewerk-workflow__track { grid-template-columns: 1fr; gap: 0; padding-left: 0.25rem; }
+  .lagewerk-workflow__track::before { left: 1.65rem; right: auto; top: 1.4rem; bottom: 1.4rem; width: 1px; height: auto; background: linear-gradient(rgba(103, 232, 249, 0.12), rgba(103, 232, 249, 0.55), rgba(103, 232, 249, 0.12)); }
+  .lagewerk-workflow__track li { display: grid; grid-template-columns: 3.8rem 1fr; align-items: center; min-height: 5.2rem; padding: 0; text-align: left; }
+  .lagewerk-workflow__track li > span { margin: 0; }
+  .lagewerk-workflow__track li > i { display: none; }
+  .lagewerk-why__content dl { grid-template-columns: 1fr; }
+  .lagewerk-why__content dl div:nth-child(even) { border-left: 0; padding-left: 0; }
+  .lagewerk-kaeryon__mark { min-height: 210px; }
+  .lagewerk-kaeryon__copy { padding: 2rem 1.35rem; }
+  .lagewerk-kaeryon__copy blockquote { padding-left: 1rem; font-size: 1rem; }
+  .lagewerk-cta { min-height: 590px; }
+  .lagewerk-cta__panel { gap: 2rem; padding: 2.5rem 0; }
+}
