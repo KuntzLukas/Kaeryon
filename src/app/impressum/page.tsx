@@ -13,19 +13,13 @@ export default function ImprintPage() {
       <section>
         <h2>Angaben gemäß § 5 DDG</h2>
         <p>{siteConfig.legalName}</p>
-        <p className="legal-notice">Die vollständige Anbieteranschrift und Rechtsform werden vor der öffentlichen Veröffentlichung ergänzt.</p>
-      </section>
-      <section>
-        <h2>Kontakt</h2>
-        <p>E-Mail: <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></p>
-      </section>
-      <section>
-        <h2>Verantwortlich für den Inhalt</h2>
-        <p>{siteConfig.legalName}</p>
-      </section>
-      <section>
-        <h2>Haftung für Links</h2>
-        <p>Diese Website kann Links zu externen Websites Dritter enthalten, auf deren Inhalte kein Einfluss besteht. Für diese fremden Inhalte wird keine Gewähr übernommen. Verantwortlich ist stets der jeweilige Anbieter.</p>
+        <address>
+          <p>Inhaber:<br />{siteConfig.owner}</p>
+          <p>Drachenfelsstraße 4<br />66994 Dahn<br />Deutschland</p>
+        </address>
+        <h3>Kontakt</h3>
+        <p>E-Mail: <a href={"mailto:" + siteConfig.email} aria-label={"E-Mail an " + siteConfig.email + " schreiben"}>{siteConfig.email}</a></p>
+        <p className="legal-explanation">KAERYON ist die Geschäftsbezeichnung des Einzelunternehmens Lukas Kuntz.</p>
       </section>
     </LegalPage>
   );

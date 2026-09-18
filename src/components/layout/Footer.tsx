@@ -1,17 +1,19 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
+import { siteConfig } from "@/config/site";
 import { legalNavigation, mainNavigation } from "@/content/navigation";
+import { Brand } from "./Brand";
 
 export function Footer() {
   return (
     <footer className="site-footer">
       <Container className="footer-main">
         <div>
-          <Link className="brand" href="/" aria-label="KAERYON Startseite">
-            <span className="brand-mark" aria-hidden="true">K</span>
-            <span>KAERYON</span>
-          </Link>
+          <Brand />
           <p className="footer-slogan">Purpose-built software for real-world problems.</p>
+          <a className="footer-email" href={"mailto:" + siteConfig.email} aria-label={"E-Mail an " + siteConfig.email + " schreiben"}>
+            {siteConfig.email}
+          </a>
         </div>
         <div className="footer-links">
           <nav aria-label="Fußnavigation">
@@ -29,7 +31,7 @@ export function Footer() {
         </div>
       </Container>
       <Container className="footer-bottom">
-        <span>© {new Date().getFullYear()} KAERYON</span>
+        <span>© 2026 KAERYON</span>
         <span>Software · Automation · Systems</span>
       </Container>
     </footer>

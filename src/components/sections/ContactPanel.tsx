@@ -1,5 +1,6 @@
 import { ArrowUpRight, Clock3, Mail, MessageSquareText } from "lucide-react";
 import { Section } from "@/components/ui/Section";
+import { Button } from "@/components/ui/Button";
 import { siteConfig } from "@/config/site";
 
 const conversationPoints = [
@@ -15,12 +16,15 @@ export function ContactPanel() {
       <div className="contact-panel">
         <div className="contact-main">
           <p className="section-label">Direkter Kontakt</p>
-          <h2 id="contact-panel-title">Erzählen Sie uns von Ihrer Herausforderung.</h2>
+          <h2 id="contact-panel-title">Schreiben Sie uns kurz, worum es geht.</h2>
           <p>Eine kurze Beschreibung des heutigen Ablaufs genügt für den Anfang. Wir melden uns persönlich und klären gemeinsam, ob und wie Software sinnvoll helfen kann.</p>
-          <a className="email-link" href={`mailto:${siteConfig.email}`}>
+          <a className="email-link" href={"mailto:" + siteConfig.email} aria-label={"E-Mail an " + siteConfig.email + " schreiben"}>
             <span><Mail aria-hidden="true" size={19} />{siteConfig.email}</span>
             <ArrowUpRight aria-hidden="true" size={20} />
           </a>
+          <Button className="contact-email-button" href={"mailto:" + siteConfig.email} aria-label={"E-Mail an " + siteConfig.email + " schreiben"}>
+            E-Mail schreiben
+          </Button>
         </div>
         <aside className="contact-aside" aria-label="Hinweise für das Erstgespräch">
           <div className="aside-heading">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ContactPanel } from "@/components/sections/ContactPanel";
 import { PageHero } from "@/components/ui/PageHero";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Kontakt",
@@ -12,9 +13,9 @@ export default function ContactPage() {
     <>
       <PageHero
         eyebrow="Kontakt / 05"
-        title="Ein guter Start ist ein klares Problem."
-        description="Sie müssen noch keine fertige technische Lösung im Kopf haben. Beschreiben Sie einfach den Prozess, die Hürde oder die Aufgabe."
-        aside={<><span>Nächster Schritt</span><strong>Gemeinsam einordnen</strong></>}
+        title="Projekt besprechen"
+        description="Sie haben einen Prozess, der unnötig Zeit kostet, oder eine Idee für eine individuelle Softwarelösung? Schreiben Sie uns kurz, worum es geht."
+        aside={<><span>Direkter Kontakt</span><strong><a href={"mailto:" + siteConfig.email} aria-label={"E-Mail an " + siteConfig.email + " schreiben"}>{siteConfig.email}</a></strong></>}
       />
       <ContactPanel />
     </>

@@ -17,13 +17,13 @@ export function ProcessSection() {
       </div>
       <ol className="process-list">
         {processSteps.map((step, index) => (
-          <FadeIn key={step.title} delay={index * 0.04}>
-            <li>
+          <li key={step.title}>
+            <FadeIn className="process-step" delay={index * 0.04}>
               <span className="process-number">{String(index + 1).padStart(2, "0")}</span>
               <h3>{step.title}</h3>
               <p>{step.description}</p>
-            </li>
-          </FadeIn>
+            </FadeIn>
+          </li>
         ))}
       </ol>
     </Section>

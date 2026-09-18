@@ -1,13 +1,14 @@
 export const siteConfig = {
   name: "KAERYON",
-  legalName: "KAERYON Systems",
-  description: "Purpose-built software, automation and digital systems for real-world problems.",
+  legalName: "KAERYON",
+  owner: "Lukas Kuntz",
+  description: "KAERYON entwickelt individuelle Software, Automatisierungen und spezialisierte digitale Lösungen für reale Geschäftsprozesse und komplexe operative Aufgaben.",
 
   slogan: "Purpose-built software for real-world problems.",
 
   url: "https://kaeryon.de",
 
-  email: "hello@kaeryon.de",
+  email: "info@kaeryon.de",
 
   navigation: [
     {
